@@ -25,6 +25,16 @@ Um programa Java para calcular e apresentar o imposto devido por contribuintes, 
 
 -----
 
+## 💡 Conceitos de Programação Orientada a Objetos (POO)
+
+Este projeto foi desenvolvido utilizando princípios fundamentais da POO para garantir um código mais organizado, reutilizável e de fácil manutenção:
+
+  * **Classes Abstratas**: Uma **classe abstrata** (provavelmente `Contribuinte` ou similar) serve como um modelo genérico para tipos de contribuintes. Ela define características e comportamentos comuns (como `nome`, `rendaAnual` e um método abstrato `calcularImposto()`) que todas as subclasses devem ter, mas sem uma implementação completa para `calcularImposto()`. Isso força as subclasses a fornecerem sua própria lógica de cálculo.
+  * **Herança**: A **herança** é utilizada pelas classes específicas (`PessoaFisica` e `PessoaJuridica`) para estender a classe abstrata `Contribuinte`. Isso permite que elas herdem os atributos e métodos comuns, ao mesmo tempo em que implementam os detalhes específicos de cálculo de imposto para seu tipo.
+  * **Polimorfismo**: O **polimorfismo** é evidenciado no método `calcularImposto()`. Embora cada tipo de contribuinte tenha sua própria implementação desse método, o programa pode tratar todos os objetos `PessoaFisica` e `PessoaJuridica` de forma genérica como `Contribuinte` ao iterar sobre uma lista deles. Isso significa que podemos chamar `calcularImposto()` em qualquer objeto `Contribuinte`, e a implementação correta (seja da pessoa física ou jurídica) será executada automaticamente, sem a necessidade de verificações condicionais complexas (`if/else` para cada tipo).
+
+-----
+
 ## 🛠️ Tecnologias Utilizadas
 
   * **Java**: Linguagem de programação principal.
